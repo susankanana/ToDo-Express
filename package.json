@@ -13,7 +13,8 @@
     "test": "jest",
     "smoke:login": "k6 run load-tests/smoke/login.smoke.ts",
     "smoke:register": "k6 run load-tests/smoke/register.smoke.ts",
-    "smoke:todos": "k6 run load-tests/smoke/todos.get.smoke.ts"
+    "smoke:todos": "k6 run load-tests/smoke/todos.get.smoke.ts",
+    "load:todos": "k6 run load-tests/load/todos.get.load.ts"
   },
   "keywords": [],
   "author": "Susan",
