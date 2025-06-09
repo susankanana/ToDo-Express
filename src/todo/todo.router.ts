@@ -3,10 +3,13 @@ import {
 } from "./todo.controller";
 
 import { Express } from 'express';
+import { adminRoleAuth, bothRoleAuth, userRoleAuth, } from '../middleware/bearAuth';
+
 
 const todo = (app: Express) => {
     // create todo route
     app.route('/todo').post(
+        adminRoleAuth,
         async (req, res, next) => {
             try {
                 await createTodoController(req, res);
@@ -18,6 +21,7 @@ const todo = (app: Express) => {
 
     // get all todos route
     app.route('/todo').get(
+        adminRoleAuth,
         async (req, res, next) => {
             try {
                 await getTodoController(req, res);
@@ -29,6 +33,7 @@ const todo = (app: Express) => {
 
     // get todo by id route
     app.route('/todo/:id').get(
+        adminRoleAuth,
         async (req, res, next) => {
             try {
                 await getTodoByIdController(req, res);
@@ -40,6 +45,7 @@ const todo = (app: Express) => {
 
     // update todo by id route
     app.route('/todo/:id').put(
+        adminRoleAuth,
         async (req, res, next) => {
             try {
                 await updateTodoController(req, res);
@@ -51,6 +57,7 @@ const todo = (app: Express) => {
 
     // delete todo by id route
     app.route('/todo/:id').delete(
+        adminRoleAuth,
         async (req, res, next) => {
             try {
                 await deleteTodoController(req, res);

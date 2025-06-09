@@ -8,6 +8,13 @@
       "when": 1748345140140,
       "tag": "0000_slim_vengeance",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1749456911714,
+      "tag": "0001_mighty_black_bolt",
+      "breakpoints": true
     }
   ]
 }

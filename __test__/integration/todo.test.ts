@@ -1,6 +1,6 @@
 import request from 'supertest';
 import bcrypt from 'bcryptjs';
-import {app} from '../../src/index';
+import app from '../../src/index'; 
 import db from '../../src/drizzle/db';
 import { TodoTable, UsersTable } from '../../src/drizzle/schema'
 import { eq, is } from 'drizzle-orm';
@@ -67,7 +67,7 @@ describe("Todo API Integration Tests", () => {
 
     it("Should get all todos", async () => {
         const res = await request(app)
-            .get("/todos")
+            .get("/todo")
             .set("Authorization", `Bearer ${token}`);
 
         expect(res.statusCode).toBe(200);
@@ -198,7 +198,7 @@ describe("Todo API Integration Tests", () => {
 
     it("should not allow access without token", async () => {
         const res = await request(app)
-            .get("/todos")
+            .get("/todo")
             .set("Authorization", ``); // No token
 
         expect(res.statusCode).toBe(401);

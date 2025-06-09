@@ -30,7 +30,6 @@ describe("Post /auth/register", () => {
                 ...testUser,
                 password: bcrypt.hashSync(testUser.password, 10)
             });
-        // .send(testUser);
         expect(res.statusCode).toBe(201);
         expect(res.body).toHaveProperty("message", "User created. Verification code sent to email");
     })
