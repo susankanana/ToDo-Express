@@ -19,10 +19,14 @@
 import express from 'express';
 import user from './auth/auth.router';
 import todo from './todo/todo.router';
+import { logger } from './middleware/logger';
+import { rateLimiterMiddleware } from './middleware/rateLimiter';
 
 const initilizeApp = () => {
     const app = express();
     app.use(express.json()); //used to parse JSON bodies
+    app.use(logger)
+    app.use(rateLimiterMiddleware)
 
     // routes
     user(app);
