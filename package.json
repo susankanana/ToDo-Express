@@ -14,7 +14,11 @@
     "smoke:login": "k6 run load-tests/smoke/login.smoke.ts",
     "smoke:register": "k6 run load-tests/smoke/register.smoke.ts",
     "smoke:todos": "k6 run load-tests/smoke/todos.get.smoke.ts",
-    "load:todos": "k6 run load-tests/load/todos.get.load.ts"
+    "load:todos": "k6 run load-tests/load/todos.get.load.ts",
+    "stress:todos": "k6 run load-tests/stress/todos.get.stress.ts",
+    "spike:todos": "k6 run load-tests/spike/todos.get.spike.ts",
+    "soak:todos": "k6 run load-tests/soak/todos.get.soak.ts",
+    "breakpoint:todos": "k6 run load-tests/breakpoint/todos.get.breakpoint.ts"
   },
   "keywords": [],
   "author": "Susan",
